@@ -7,7 +7,9 @@ require('dotenv').config();
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const helpers = require('./utils/helpers');
+//const { Sequelize } = require('sequelize/types');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,6 +19,10 @@ const sess = {
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
+  cookie: {},
+  store: new sequelizeStore({
+    db: sequelize
+  })
 };
 
 app.use(session(sess));
@@ -32,6 +38,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+// sequelize.sync({ force: false }).then(() => {
+//   app.listen(PORT, () => console.log('Now listening'));
+// });
+
+app.listen(PORT, () => {
+  console.log(`app listening on port ${PORT}`)
+  sequelize.sync({ force: false })
+})
+
+

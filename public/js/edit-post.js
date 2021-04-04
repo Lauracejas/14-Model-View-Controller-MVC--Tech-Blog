@@ -1,8 +1,8 @@
-async function editFormHandler(event) {
+const editFormHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value.trim();
-    const content = document.querySelector('input[name="content"]').value.trim();
+    const title = document.querySelector('#titleComment').value.trim();
+    const content = document.querySelector('#contentComment').value.trim();
     console.log(title);
     console.log(content);
 
@@ -23,7 +23,7 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }

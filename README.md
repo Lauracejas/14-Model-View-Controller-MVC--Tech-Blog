@@ -53,9 +53,11 @@ SOFTWARE.
 [Github-Repo](https://github.com/Lauracejas/14-Tech-Blog)
 
 ## Screenshots
-![heroku-app](./assets/dashboard.JPG)
+![Screenshots](./public/images/login.JPG)
 
-![heroku-app](./assets/fit.JPG)
+![Screenshots](./public/images/signup.JPG)
+
+![Screenshots](./public/images/tech.JPG)
 
 ## Questions
   If you have any question, Email me at: lauracejasmartin94@gmail.com 

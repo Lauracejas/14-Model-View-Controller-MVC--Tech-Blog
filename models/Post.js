@@ -13,7 +13,13 @@ Post.init(
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate:{
+                notNull: {
+                    msg: 'Please enter the title'
+                  }
+            }
+
         },
         content: {
             type: DataTypes.TEXT,

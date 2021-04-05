@@ -5,35 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MVC Tech Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Aleo&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/v4-shims.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div class="wrapper">
-      <header class="hero">
-          <div>
-            <nav class="nav">
-                    <a class="link" href="/">Home</a>
-                    <a class="link" href="/dashboard">Dashboard</a>
-                    {{#if logged_in}}
-                    <a class="link" href="/" id="logout">Logout</a>
-                    {{else}}
-                    <a class="link" href="/login">Login</a>
-                    {{/if}}
-                </nav>          
-          </div>
+    <header class="hero">
+      <div class="container-fluid ">
+        <nav class="navbar display-flex justify-content-around navbl" style="background-color:rgb(80, 54, 7);">
+          <a class="link" href="/">Home</a>
+          <a class="link" href="/dashboard">Dashboard</a>
+          {{#if logged_in}}
+          <a class="link" href="/" id="logout">Logout</a>
+          {{else}}
+          <a class="link" href="/login">Login</a>
+          {{/if}}
+        </nav>
+      <h1 class="app-title"><i class="fab"></i>The Tech Blog</h1>
+      </div>
 
-          <h1 class="app-title"><i class="fab"></i>The Tech Blog</h1>
-      </header>
+    </header>
 
     <main>
       {{{ body }}}
     </main>
   </div>
 
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
 </body>
+
 </html>

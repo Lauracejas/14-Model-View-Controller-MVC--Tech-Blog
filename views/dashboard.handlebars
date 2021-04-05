@@ -1,16 +1,17 @@
-<div class="container-fluid"> 
+<div class="container-fluid">
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+  {{#if posts.length}}
+  <section>
+    <h2>Your Posts</h2>
     {{#each posts as |post|}}
-      {{> dashboard-postinfo post}}
+    {{> dashboard-postinfo post}}
     {{/each}}
 
-</section>
-{{/if}}
+  </section>
+  {{/if}}
 
-<button type="submit" class="btn"><a class="link" style="background-color: orange;" href="/dashboard/new">New Post</a></button>
+  <button type="submit" class="btn"><a class="link" style="background-color: orange;" href="/dashboard/new">New
+      Post</a></button>
 </div>
 
 <script src="/js/add-post.js"></script>
